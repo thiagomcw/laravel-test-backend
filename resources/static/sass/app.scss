@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,600');
+
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+thead tr {
+    font-size: 0.9674rem !important;
+}
+
+thead tr th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+thead tr th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+tbody tr td:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 0px;
+}
+
+tbody tr td:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0px;
+}
+
+label.default {
+    @apply .block .text-gray-700 .text-sm .font-bold .mb-2;
+}
+
+input.default {
+    @apply .shadow .appearance-none .border .rounded .w-full .py-2 .px-3 .text-gray-700 .leading-tight;
+
+    &:focus {
+        @apply .outline-none .shadow-outline;
+    }
+}
+
+.default-custom-select {
+    @apply .block .relative;
+
+    select {
+        @apply .block .appearance-none .w-full .bg-white .border .border-gray-400 .px-4 .py-2 .pr-8 .rounded .shadow .leading-tight .text-gray-700;
+
+        &:hover {
+            @apply .border-gray-500;
+        }
+
+        &:focus {
+            @apply .outline-none .shadow-outline;
+        }
+    }
+
+    div {
+        @apply .pointer-events-none .absolute .inset-y-0 .right-0 .flex .items-center .px-2 .text-gray-700;
+    }
+}
+
+button.default-submit {
+    @apply .bg-blue-500 .text-white .font-bold .py-2 .px-4 .rounded;
+
+    &:hover {
+        @apply .bg-blue-700;
+    }
+
+    &:focus {
+        @apply .outline-none .shadow-outline;
+    }
+}
+
+a.default-back {
+    @apply .inline-block .align-baseline .font-bold .text-sm .text-blue-500;
+
+    &:hover {
+        @apply .text-blue-800;
+    }
+}

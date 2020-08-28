@@ -19,6 +19,7 @@
                         E-mail do Proprietário:
                     </label>
                     <input id="email" name="email" type="email" value="{{ old('email') }}" class="default" required>
+                    @include('_layouts.form-error', ['field' => 'email'])
                 </div>
 
                 <div class="mb-4">
@@ -26,6 +27,7 @@
                         Endereço:
                     </label>
                     <input id="street" name="street" type="text" value="{{ old('street') }}" class="default" required>
+                    @include('_layouts.form-error', ['field' => 'street'])
                 </div>
 
                 <div class="mb-4 w-1/3 inline-block">
@@ -33,6 +35,7 @@
                         Número:
                     </label>
                     <input id="number" name="number" type="text" value="{{ old('number') }}" class="default" required>
+                    @include('_layouts.form-error', ['field' => 'number'])
                 </div>
 
                 <div class="mb-4 w-1/3 inline-block float-right">
@@ -41,6 +44,7 @@
                     </label>
                     <input id="complement" name="complement" type="text" value="{{ old('complement') }}"
                            class="default">
+                    @include('_layouts.form-error', ['field' => 'complement'])
                 </div>
 
                 <div class="mb-4">
@@ -49,6 +53,7 @@
                     </label>
                     <input id="neighborhood" name="neighborhood" type="text" value="{{ old('neighborhood') }}"
                            class="default" required>
+                    @include('_layouts.form-error', ['field' => 'neighborhood'])
                 </div>
 
                 <div class="mb-4">
@@ -56,17 +61,18 @@
                         Cidade:
                     </label>
                     <input id="city" name="city" type="text" value="{{ old('city') }}" class="default" required>
+                    @include('_layouts.form-error', ['field' => 'city'])
                 </div>
 
                 <div class="mb-4 w-1/3">
-                    <label class="default" for="plan_id">
+                    <label class="default" for="state">
                         Estado
                     </label>
                     <div class="default-custom-select">
-                        <select id="plan_id" name="plan_id" required>
+                        <select id="state" name="state" required>
                             <option></option>
                             @foreach($states as $state)
-                                <option value="{{ $state }}">
+                                <option value="{{ $state }}" {{ $state !== old('state') ?: 'selected="selected"' }}>
                                     {{ $state }}
                                 </option>
                             @endforeach
@@ -75,6 +81,7 @@
                             <i class="fas fa-angle-down"></i>
                         </div>
                     </div>
+                    @include('_layouts.form-error', ['field' => 'state'])
                 </div>
 
                 <div class="flex items-center justify-between">

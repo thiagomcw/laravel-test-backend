@@ -6,12 +6,7 @@
 
         <modal title="Atenção" text="Tem certeza que deseja deletar este registro?" confirm-button-text="Sim"
                :cancel-button="true" cancel-button-text="Não" :show="modalOpened" @close="toggleModalOpened"
-               @cancel="toggleModalOpened" @confirm="submit"></modal>
-
-        <form :action="url" method="post" class="inline" ref="formDelete">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" :value="token">
-        </form>
+               @cancel="toggleModalOpened" @confirm="confirm"></modal>
     </div>
 </template>
 
@@ -20,12 +15,8 @@ import Modal from './Modal';
 
 export default {
     props: {
-        url: {
-            type: String,
-            required: true
-        },
-        token: {
-            type: String,
+        id: {
+            type: Number,
             required: true
         }
     },
@@ -45,8 +36,9 @@ export default {
             this.modalOpened = !this.modalOpened;
         },
 
-        submit() {
-            this.$refs.formDelete.submit();
+        confirm() {
+            this.$emit('confirmed', this.id);
+            this.toggleModalOpened();
         }
     }
 }

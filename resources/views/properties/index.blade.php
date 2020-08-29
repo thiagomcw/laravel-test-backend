@@ -34,9 +34,7 @@
                         <td class="px-4 py-4">@{{ property.email }}</td>
                         <td class="px-4 py-4">@{{ property.address }}</td>
                         <td class="px-4 py-4 text-center">
-
-                            {{--                            <delete-link url="{{ route('api.properties.destroy', $user->getKey()) }}"--}}
-                            {{--                                         token="{{ csrf_token() }}"></delete-link>--}}
+                            <delete-link :id="property.id" @confirmed="deleteProperty"></delete-link>
                         </td>
                     </tr>
                     </tbody>

@@ -22,6 +22,12 @@ export default {
                 .then(response => this.properties = response.data);
         },
 
+        deleteProperty(id) {
+            Properties
+                .destroy(id)
+                .then(() => this.loadProperties(this.order_by));
+        },
+
         order(field) {
             if (field === this.order_by)
                 return false;

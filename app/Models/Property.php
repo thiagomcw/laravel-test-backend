@@ -20,4 +20,15 @@ class Property extends Model
         'city',
         'state',
     ];
+
+    public function getAddressAttribute()
+    {
+        $address = "{$this->street}, {$this->number}";
+
+        if ($this->complement) {
+            $address .= ", {$this->complement}";
+        }
+
+        return "$address, Bairro {$this->neighborhood}, {$this->city} - {$this->state}";
+    }
 }

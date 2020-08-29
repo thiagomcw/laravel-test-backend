@@ -14,7 +14,7 @@
 <div id="app">
     @include('_layouts.navbar')
 
-    <div class="container mx-auto py-10">
+    <div class="container mx-auto py-10" v-cloak>
         @yield('content')
     </div>
 </div>

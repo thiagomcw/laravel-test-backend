@@ -9,6 +9,14 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
+[v-cloak] {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 thead tr {
     font-size: 0.9674rem !important;
 }

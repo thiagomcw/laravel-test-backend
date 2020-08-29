@@ -23,4 +23,9 @@ class Contract extends Model
         'person'  => 'Pessoa Física',
         'company' => 'Pessoal Jurídica',
     ];
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class);
+    }
 }

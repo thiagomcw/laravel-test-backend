@@ -17,6 +17,7 @@ class PropertiesController extends Controller
     public function index(IndexRequest $request)
     {
         $properties = (new PropertyRepository)
+            ->with('contract')
             ->all($request->get('order_by', 'created_at'));
 
         return PropertyResource::collection($properties);

@@ -11,6 +11,7 @@ Vue.component('delete-link', require('./components/DeleteLink.vue').default);
 Vue.component('flash-alert', require('./components/FlashAlert.vue').default);
 
 Vue.component('properties-index', require('./views/properties/Index.vue').default);
+Vue.component('contracts-index', require('./views/contracts/Index.vue').default);
 Vue.component('contracts-form', require('./views/contracts/Form.vue').default);
 
 new Vue({

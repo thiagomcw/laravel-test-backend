@@ -6,7 +6,7 @@
 
     <div class="w-full sm:w-1/2 rounded overflow-hidden bg-white shadow-md mx-auto">
         <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Editar Usuário</div>
+            <div class="font-bold text-xl mb-2">Adicionar Propriedade</div>
             <hr>
         </div>
 
@@ -72,7 +72,7 @@
                         <select id="state" name="state" required>
                             <option></option>
                             @foreach($states as $state)
-                                <option value="{{ $state }}" {{ $state !== old('state') ?: 'selected="selected"' }}>
+                                <option value="{{ $state }}" {{ $state === old('state') ? 'selected="selected"' : '' }}>
                                     {{ $state }}
                                 </option>
                             @endforeach

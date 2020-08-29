@@ -21,6 +21,10 @@
                        href="{{ route('web.properties.index') }}">
                         Propriedades
                     </a>
+                    <a class="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+                       href="{{ route('web.contracts.index') }}">
+                        Contratos
+                    </a>
                 </div>
             </div>
         </nav>

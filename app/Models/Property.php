@@ -21,6 +21,17 @@ class Property extends Model
         'state',
     ];
 
+    public function contract()
+    {
+        return $this->hasOne(Contract::class);
+    }
+
+
+    public function getStatusAttribute()
+    {
+        return $this->contract()->exists() ? 'Contratado' : 'Não contratado';
+    }
+
     public function getAddressAttribute()
     {
         $address = "{$this->street}, {$this->number}";

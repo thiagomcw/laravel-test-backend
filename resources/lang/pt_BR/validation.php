@@ -181,6 +181,10 @@ return [
         'number'                => 'Número',
         'complement'            => 'Complemento',
         'neighborhood'          => 'Bairro',
+        'property_id'           => 'Propriedade',
+        'contractor_type'       => 'Tipo de Contratante',
+        'contractor_email'      => 'E-mail',
+        'contractor_name'       => 'Nome',
     ],
 
 ];
